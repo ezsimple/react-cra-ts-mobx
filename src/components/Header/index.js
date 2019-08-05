@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Logo from 'components/Logo';
-import FirstTopMenu from 'components/FirstTopMenu';
-import SecondTopMenu from 'components/SecondTopMenu';
+import TopMenu from 'components/TopMenu';
 // import BaseDate from 'components/BaseDate';
 
 class Header extends Component {
@@ -9,8 +8,7 @@ class Header extends Component {
     return (
       <div>
         <Logo />
-        <FirstTopMenu />
-        <SecondTopMenu />
+        <TopMenu />
       </div>
     );
   }

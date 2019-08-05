@@ -7,24 +7,29 @@
  */
 
 import React, { Component } from 'react';
+import { observable, action } from 'mobx';
+import { observer } from 'mobx-react';
+
 // import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-// import HomePage from 'containers/HomePage/Loadable';
-// import FeaturePage from 'containers/FeaturePage/Loadable';
-// import NotFoundPage from 'containers/NotFoundPage/Loadable';
+// npmtrends : https://www.npmtrends.com/antd-vs-element-react-vs-material-ui
+import { Layout, Menu, Icon } from 'antd';
+import 'antd/dist/antd.css';
+import GlobalStyle from '../../global-styles';
+
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-// import Counter from 'components/NewCounter';
 
-import GlobalStyle from '../../global-styles';
 import HomePage from 'containers/HomePage';
 import IotPage from 'containers/IotPage';
 import NotFoundPage from 'containers/NotFoundPage';
 
 const AppWrapper = styled.div`
   /*
+  어떤 디자인을 입혀야 하는지????
+
   max-width: calc(768px + 16px * 2);
   margin: 0 auto;
   display: flex;
@@ -34,17 +39,14 @@ const AppWrapper = styled.div`
   */
 `;
 
+@observer
 class App extends Component {
+  @observable
+  state = {};
+
   render() {
     return (
       <AppWrapper>
-        {/*
-        <Helmet
-          titleTemplate="%s - React.js Boilerplate"
-          defaultTitle="React.js Boilerplate">
-          <meta name="description" content="A React.js Boilerplate application" />
-        </Helmet>
-        */}
         <Header />
         <BrowserRouter>
           <Switch>
