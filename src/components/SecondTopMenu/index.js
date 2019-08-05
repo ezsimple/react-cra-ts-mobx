@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class SecondTopMenu extends Component {
+class SecondTopMenu extends Component {
   render() {
     return this.iotMenu();
   }
@@ -40,3 +40,5 @@ export default class SecondTopMenu extends Component {
     return <div />;
   }
 }
+
+export default SecondTopMenu;
