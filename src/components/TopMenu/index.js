@@ -4,7 +4,7 @@ import { Nav, NavItem, NavLink, Button, Fade } from 'reactstrap';
 import { observable, action } from 'mobx';
 import { observer } from 'mobx-react';
 
-// import './index.scss';
+import './index.scss';
 
 @observer
 class TopMenu extends Component {
@@ -57,88 +57,116 @@ class TopMenu extends Component {
           </NavItem>
         </Nav>
 
-        <Nav className="overflow-hidden nowrap">
-          <NavItem>
-            {this.fadeIn0 && (
-              <>
-                <Fade in={this.fadeIn0} className="mb-3">
-                  <Button outline color="primary" className="ma1 fl">
-                    사육현황
-                  </Button>
-                  <Button outline color="primary" className="ma1 fl">
-                    교육현황
-                  </Button>
-                  <Button outline color="primary" className="ma1 fl">
-                    임신사고현황
-                  </Button>
-                  <Button outline color="primary" className="ma1 fl">
-                    생산현황
-                  </Button>
-                  <Button outline color="primary" className="ma1 fl">
-                    전입 및 전출/폐사현황
-                  </Button>
-                  <Button outline color="primary" className="ma1 fl">
-                    거래기록
-                  </Button>
-                </Fade>
-              </>
-            )}
-          </NavItem>
+        {this.fadeIn0 && (
+          <>
+            <div className="scrolling-wrapper">
+              <div className="item">
+                <Button outline color="primary" className="ma1 fl">
+                  사육현황
+                </Button>
+              </div>
+              <div className="item">
+                <Button outline color="primary" className="ma1 fl">
+                  교육현황
+                </Button>
+              </div>
+              <div className="item">
+                <Button outline color="primary" className="ma1 fl">
+                  임신사고현황
+                </Button>
+              </div>
+              <div className="item">
+                <Button outline color="primary" className="ma1 fl">
+                  생산현황
+                </Button>
+              </div>
+              <div className="item">
+                <Button outline color="primary" className="ma1 fl">
+                  전입 및 전출/폐사현황
+                </Button>
+              </div>
+              <div className="item">
+                <Button outline color="primary" className="ma1 fl">
+                  거래기록
+                </Button>
+              </div>
+            </div>
+          </>
+        )}
 
-          <NavItem>
-            {this.fadeIn1 && (
-              <>
-                <Fade in={this.fadeIn1} className="mb-3">
-                  <Button outline color="primary" className="ma1 fl">
-                    모돈자동급이기
-                  </Button>
-                  <Button outline color="primary" className="ma1 fl">
-                    군사급이기
-                  </Button>
-                  <Button outline color="primary" className="ma1 fl">
-                    환경센서
-                  </Button>
-                  <Button outline color="primary" className="ma1 fl">
-                    음수관리기
-                  </Button>
-                  <Button outline color="primary" className="ma1 fl">
-                    사료빈관리기
-                  </Button>
-                  <Button outline color="primary" className="ma1 fl">
-                    돈선별기
-                  </Button>
-                  <Button outline color="primary" className="ma1 fl">
-                    자돈급이기
-                  </Button>
-                  <Button outline color="primary" className="ma1 fl">
-                    냉방기
-                  </Button>
-                  <Button outline color="primary" className="ma1 fl">
-                    전기화재
-                  </Button>
-                </Fade>
-              </>
-            )}
-          </NavItem>
+        {this.fadeIn1 && (
+          <>
+            <div className="scrolling-wrapper">
+              <div className="item">
+                <Button outline color="primary" className="ma1 fl">
+                  모돈자동급이기
+                </Button>
+              </div>
+              <div className="item">
+                <Button outline color="primary" className="ma1 fl">
+                  군사급이기
+                </Button>
+              </div>
+              <div className="item">
+                <Button outline color="primary" className="ma1 fl">
+                  환경센서
+                </Button>
+              </div>
+              <div className="item">
+                <Button outline color="primary" className="ma1 fl">
+                  음수관리기
+                </Button>
+              </div>
+              <div className="item">
+                <Button outline color="primary" className="ma1 fl">
+                  사료빈관리기
+                </Button>
+              </div>
+              <div className="item">
+                <Button outline color="primary" className="ma1 fl">
+                  돈선별기
+                </Button>
+              </div>
+              <div className="item">
+                <Button outline color="primary" className="ma1 fl">
+                  자돈급이기
+                </Button>
+              </div>
+              <div className="item">
+                <Button outline color="primary" className="ma1 fl">
+                  냉방기
+                </Button>
+              </div>
+              <div className="item">
+                <Button outline color="primary" className="ma1 fl">
+                  전기화재
+                </Button>
+              </div>
+            </div>
+          </>
+        )}
 
-          <NavItem>
-            {this.fadeIn2 && (
-              <>
-                <Fade in={this.fadeIn2} className="mb-3">
-                  <Button outline color="primary" className="ma1 fl">
-                    도매시세
-                  </Button>
-                  <Button outline color="primary" className="ma1 fl">
-                    양돈기사
-                  </Button>
-                  <Button outline color="primary" className="ma1 fl">
-                    날씨
-                  </Button>
-                </Fade>
-              </>
-            )}
-          </NavItem>
-        </Nav>
+        {this.fadeIn2 && (
+          <>
+            <div className="scrolling-wrapper">
+              <div className="item">
+                <Button outline color="primary" className="ma1 fl">
+                  도매시세
+                </Button>
+              </div>
+              <div className="item">
+                <Button outline color="primary" className="ma1 fl">
+                  양돈기사
+                </Button>
+              </div>
+              <div className="item">
+                <Button outline color="primary" className="ma1 fl">
+                  날씨
+                </Button>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     );
   }
