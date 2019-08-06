@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Nav, NavItem, NavLink, Button, Fade, Hide } from 'reactstrap';
+import { Nav, NavItem, NavLink, Button, Fade } from 'reactstrap';
 
 import { observable, action } from 'mobx';
 import { observer } from 'mobx-react';
 
-import './index.scss';
+// import './index.scss';
 
 @observer
 class TopMenu extends Component {
@@ -41,27 +41,27 @@ class TopMenu extends Component {
   render() {
     return (
       <div>
-        <Nav className="bg-yellow">
-          <NavItem>
-            <NavLink className="fl" onClick={this.toggle0}>
+        <Nav className="bg-yellow nowrap">
+          <NavItem className="overflow-hidden">
+            <NavLink className="fl pa1" onClick={this.toggle0}>
               일보
             </NavLink>
-            <NavLink className="fl" onClick={this.toggle1}>
+            <NavLink className="fl pa1" onClick={this.toggle1}>
               IoT
             </NavLink>
-            <NavLink className="fl">성적그래프</NavLink>
-            <NavLink className="fl" onClick={this.toggle2}>
+            <NavLink className="fl pa1">성적그래프</NavLink>
+            <NavLink className="fl pa1" onClick={this.toggle2}>
               양돈정보
             </NavLink>
-            <NavLink className="fn">퀵메뉴</NavLink>
+            <NavLink className="fl pa1">퀵메뉴</NavLink>
           </NavItem>
         </Nav>
 
-        <Nav className="bg-white">
+        <Nav className="overflow-hidden nowrap">
           <NavItem>
-            <Fade in={this.fadeIn0} className="mb-3">
-              {this.fadeIn0 && (
-                <>
+            {this.fadeIn0 && (
+              <>
+                <Fade in={this.fadeIn0} className="mb-3">
                   <Button outline color="primary" className="ma1 fl">
                     사육현황
                   </Button>
@@ -77,18 +77,18 @@ class TopMenu extends Component {
                   <Button outline color="primary" className="ma1 fl">
                     전입 및 전출/폐사현황
                   </Button>
-                  <Button outline color="primary" className="ma1 fn">
+                  <Button outline color="primary" className="ma1 fl">
                     거래기록
                   </Button>
-                </>
-              )}
-            </Fade>
+                </Fade>
+              </>
+            )}
           </NavItem>
 
           <NavItem>
-            <Fade in={this.fadeIn1} className="mb-3">
-              {this.fadeIn1 && (
-                <>
+            {this.fadeIn1 && (
+              <>
+                <Fade in={this.fadeIn1} className="mb-3">
                   <Button outline color="primary" className="ma1 fl">
                     모돈자동급이기
                   </Button>
@@ -113,30 +113,30 @@ class TopMenu extends Component {
                   <Button outline color="primary" className="ma1 fl">
                     냉방기
                   </Button>
-                  <Button outline color="primary" className="ma1 fn">
+                  <Button outline color="primary" className="ma1 fl">
                     전기화재
                   </Button>
-                </>
-              )}
-            </Fade>
+                </Fade>
+              </>
+            )}
           </NavItem>
 
           <NavItem>
-            <Fade in={this.fadeIn2} className="mb-3">
-              {this.fadeIn2 && (
-                <>
+            {this.fadeIn2 && (
+              <>
+                <Fade in={this.fadeIn2} className="mb-3">
                   <Button outline color="primary" className="ma1 fl">
                     도매시세
                   </Button>
                   <Button outline color="primary" className="ma1 fl">
                     양돈기사
                   </Button>
-                  <Button outline color="primary" className="ma1 fn">
+                  <Button outline color="primary" className="ma1 fl">
                     날씨
                   </Button>
-                </>
-              )}
-            </Fade>
+                </Fade>
+              </>
+            )}
           </NavItem>
         </Nav>
       </div>
