@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAlignJustify } from '@fortawesome/free-solid-svg-icons';
+import { faAlignJustify, faPiggyBank } from '@fortawesome/free-solid-svg-icons';
 
 import './index.sass';
 
@@ -9,11 +9,15 @@ import './index.sass';
 class Logo extends Component {
   render() {
     let menu = <FontAwesomeIcon icon={faAlignJustify} />;
+    let logo = <FontAwesomeIcon icon={faPiggyBank} />;
     return (
-      <div>
-        <div className="fl">{menu}</div>
-        <div className="center fn">피그플랜 로고</div>
-      </div>
+      <>
+        <div class="row">
+          <div class="col">{menu}</div>
+          <div class="col">{logo} Pigplan XE</div>
+          <div class="col" />
+        </div>
+      </>
     );
   }
 }

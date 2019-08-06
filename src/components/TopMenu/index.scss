@@ -2,6 +2,9 @@
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
 
   .item {
     display: inline-block;
