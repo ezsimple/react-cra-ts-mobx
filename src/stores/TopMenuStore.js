@@ -1,6 +1,10 @@
 import { observable, action } from 'mobx';
 
 class TopMenuStore {
+  // RootStore 통합을 위한 생성자
+  constructor(root) {
+    this.root = root;
+  }
   @observable
   fadeIn0 = false;
 
