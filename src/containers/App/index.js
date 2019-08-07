@@ -43,15 +43,15 @@ class App extends Component {
   render() {
     return (
       <AppWrapper>
-        <Header />
         <BrowserRouter>
+          <Header />
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/iot/1" component={IotPage} />
             <Route path="" component={NotFoundPage} />
           </Switch>
+          <Footer />
         </BrowserRouter>
-        <Footer />
         <GlobalStyle />
       </AppWrapper>
     );

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Nav, NavItem, NavLink, Button, Fade } from 'reactstrap';
+import { Link } from 'react-router-dom';
+
+import { Nav, NavItem, NavLink, Button } from 'reactstrap';
 
 import { observable, action } from 'mobx';
 import { observer } from 'mobx-react';
@@ -61,14 +63,18 @@ class TopMenu extends Component {
           <>
             <div className="scrolling-wrapper">
               <div className="item">
-                <Button outline color="primary" className="ma1 fl">
-                  사육현황
-                </Button>
+                <Link to="/iot/1">
+                  <Button outline color="primary" className="ma1 fl">
+                    사육현황
+                  </Button>
+                </Link>
               </div>
               <div className="item">
-                <Button outline color="primary" className="ma1 fl">
-                  교육현황
-                </Button>
+                <Link to="/iot/2">
+                  <Button outline color="primary" className="ma1 fl">
+                    교육현황
+                  </Button>
+                </Link>
               </div>
               <div className="item">
                 <Button outline color="primary" className="ma1 fl">
