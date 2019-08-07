@@ -15,7 +15,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 // npmtrends : https://www.npmtrends.com/antd-vs-element-react-vs-material-ui
 // import { Layout, Menu, Icon } from 'antd';
 // import 'antd/dist/antd.css';
-import GlobalStyle from '../../global-styles';
+import GlobalStyle from './global-styles';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
