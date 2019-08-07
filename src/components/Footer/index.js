@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
@@ -62,13 +63,13 @@ class Footer extends Component {
           </Collapse>
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <div className="col">
-            <NavLink href="/">{home}</NavLink>
+            <Link to="/">{home}</Link>
           </div>
           <div className="col">
-            <NavLink href="/qr">{qr}</NavLink>
+            <Link to="/qr">{qr}</Link>
           </div>
           <div className="col">
-            <NavLink href="/my">{myPage}</NavLink>
+            <Link to="/my">{myPage}</Link>
           </div>
         </Navbar>
       </div>
