@@ -7,16 +7,14 @@
  */
 
 import React, { Component } from 'react';
-import { observable, action } from 'mobx';
-import { observer } from 'mobx-react';
 
 // import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 // npmtrends : https://www.npmtrends.com/antd-vs-element-react-vs-material-ui
-import { Layout, Menu, Icon } from 'antd';
-import 'antd/dist/antd.css';
+// import { Layout, Menu, Icon } from 'antd';
+// import 'antd/dist/antd.css';
 import GlobalStyle from '../../global-styles';
 
 import Header from 'components/Header';
@@ -37,25 +35,23 @@ const AppWrapper = styled.div`
   padding: 0 16px;
   flex-direction: column;
   */
+  marging: 0;
+  pading: 0;
 `;
 
-@observer
 class App extends Component {
-  @observable
-  state = {};
-
   render() {
     return (
       <AppWrapper>
-        <Header />
         <BrowserRouter>
+          <Header />
           <Switch>
             <Route exact path="/" component={HomePage} />
-            <Route path="/iot" component={IotPage} />
+            <Route path="/iot/1" component={IotPage} />
             <Route path="" component={NotFoundPage} />
           </Switch>
+          <Footer />
         </BrowserRouter>
-        <Footer />
         <GlobalStyle />
       </AppWrapper>
     );

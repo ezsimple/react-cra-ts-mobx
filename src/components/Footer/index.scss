@@ -1,0 +1,16 @@
+.always_bottom {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  // 아이콘들을 중앙 정렬 시키기
+  text-align: center;
+  div {
+    display: inline-block;
+  }
+
+  // 사용하면 천정에 달라 붙는다.
+  // height: calc(100% - 60px);
+  // min-height: 100vh;
+}

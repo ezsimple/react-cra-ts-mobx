@@ -1,18 +1,54 @@
 import React, { Component } from 'react';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+} from 'reactstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAlignJustify } from '@fortawesome/free-solid-svg-icons';
+import { faAlignJustify, faPiggyBank } from '@fortawesome/free-solid-svg-icons';
 
-import './index.sass';
+import './index.scss';
 
-// 도너츠 버튼을 누르면 전체메뉴 레이어 팝업이 생성됩니다.
 class Logo extends Component {
+  constructor(props) {
+    super(props);
+
+    this.toggleNavbar = this.toggleNavbar.bind(this);
+    this.state = {
+      collapsed: true,
+    };
+  }
+
+  toggleNavbar() {
+    this.setState({
+      collapsed: !this.state.collapsed,
+    });
+  }
   render() {
-    let menu = <FontAwesomeIcon icon={faAlignJustify} />;
+    let logo = <FontAwesomeIcon icon={faPiggyBank} />;
     return (
       <div>
-        <div className="fl">{menu}</div>
-        <div className="center fn">피그플랜 로고</div>
+        <Navbar color="faded" light>
+          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+          <NavbarBrand href="/" className="mr-auto">
+            {logo} Pigplan XE
+          </NavbarBrand>
+          <Collapse isOpen={!this.state.collapsed} navbar>
+            <Nav navbar>
+              <NavItem>
+                <NavLink href="/components/">Components</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/">Pigplan XE</NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
       </div>
     );
   }
