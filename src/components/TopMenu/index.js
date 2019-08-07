@@ -11,7 +11,7 @@ import './index.scss';
 @observer
 class TopMenu extends Component {
   @observable
-  fadeIn0 = true;
+  fadeIn0 = false;
 
   @observable
   fadeIn1 = false;
@@ -19,26 +19,64 @@ class TopMenu extends Component {
   @observable
   fadeIn2 = false;
 
+  @observable
+  fadeIn3 = false;
+
+  @observable
+  fadeIn4 = false;
+
+  clear = () => {
+    this.fadeIn0 = this.fadeIn1 = this.fadeIn2 = this.fadeIn3 = this.fadeIn4 = false;
+  };
+
   @action
   toggle0 = () => {
+    this.clear();
     this.fadeIn0 = true;
-    this.fadeIn1 = false;
-    this.fadeIn2 = false;
   };
 
   @action
   toggle1 = () => {
-    this.fadeIn0 = false;
+    this.clear();
     this.fadeIn1 = true;
-    this.fadeIn2 = false;
   };
 
   @action
   toggle2 = () => {
-    this.fadeIn0 = false;
-    this.fadeIn1 = false;
+    this.clear();
     this.fadeIn2 = true;
   };
+
+  @action
+  toggle3 = () => {
+    this.clear();
+    this.fadeIn3 = true;
+  };
+
+  @action
+  toggle4 = () => {
+    this.clear();
+    this.fadeIn4 = true;
+  };
+
+  // -----------------------------------------------------------------------------
+  // url 경로에 따라, 2Depth 메뉴 출력여부 확인
+  // -----------------------------------------------------------------------------
+  // react-router에서는 url이 바뀌지 않으므로, 이 방법은 쓸수 없다.
+  // subMenuExist = () => {
+  //   let loc = window.location.pathname;
+  //   if (!loc) return false;
+
+  //   let ret = !(loc.indexOf('/score') !== -1 || loc.indexOf('/quick') !== -1);
+  //   console.log(
+  //     'check : ',
+  //     loc,
+  //     loc.indexOf('/score'),
+  //     loc.indexOf('/quick'),
+  //     ret
+  //   );
+  //   return ret;
+  // };
 
   render() {
     return (
@@ -55,15 +93,20 @@ class TopMenu extends Component {
             </NavLink>
           </div>
           <div>
-            <NavLink href="/score">성적그래프</NavLink>
+            <NavLink href="#" onClick={this.toggle2}>
+              성적그래프
+            </NavLink>
           </div>
           <div>
-            <NavLink href="#" onClick={this.toggle2}>
+            <NavLink href="#" onClick={this.toggle3}>
+              {' '}
               양돈정보
             </NavLink>
           </div>
           <div>
-            <NavLink href="/quick">퀵메뉴</NavLink>
+            <NavLink href="#" onClick={this.toggle4}>
+              퀵메뉴
+            </NavLink>
           </div>
         </div>
 
@@ -186,7 +229,7 @@ class TopMenu extends Component {
           </>
         )}
 
-        {this.fadeIn2 && (
+        {this.fadeIn3 && (
           <>
             <div className="scrolling-wrapper">
               <div className="item">

@@ -61,13 +61,13 @@ class Footer extends Component {
             </Nav>
           </Collapse>
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-          <div class="col">
+          <div className="col">
             <NavLink href="/">{home}</NavLink>
           </div>
-          <div class="col">
+          <div className="col">
             <NavLink href="/qr">{qr}</NavLink>
           </div>
-          <div class="col">
+          <div className="col">
             <NavLink href="/my">{myPage}</NavLink>
           </div>
         </Navbar>
@@ -77,25 +77,3 @@ class Footer extends Component {
 }
 
 export default Footer;
-
-// export default class Footer extends Component {
-//   render() {
-//     let iconSize = '2x';
-
-//     let menu = <FontAwesomeIcon icon={faAlignJustify} size={iconSize} />;
-//     let home = <FontAwesomeIcon icon={faHome} size={iconSize} />;
-//     let qr = <FontAwesomeIcon icon={faQrcode} size={iconSize} />;
-//     let myPage = <FontAwesomeIcon icon={faUser} size={iconSize} />;
-
-//     return (
-//       <div>
-//         <div class="row always_bottom">
-//           <div class="col">{menu}</div>
-//           <div class="col">{home}</div>
-//           <div class="col">{qr}</div>
-//           <div class="col">{myPage}</div>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
