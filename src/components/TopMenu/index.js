@@ -43,58 +43,74 @@ class TopMenu extends Component {
   render() {
     return (
       <div>
-        <Nav className="bg-yellow nowrap">
-          <NavItem className="overflow-hidden">
-            <NavLink className="fl pa1" onClick={this.toggle0}>
+        <div className="scrolling-wrapper">
+          <div>
+            <NavLink href="#" onClick={this.toggle0}>
               일보
             </NavLink>
-            <NavLink className="fl pa1" onClick={this.toggle1}>
+          </div>
+          <div>
+            <NavLink href="#" onClick={this.toggle1}>
               IoT
             </NavLink>
-            <NavLink className="fl pa1">성적그래프</NavLink>
-            <NavLink className="fl pa1" onClick={this.toggle2}>
+          </div>
+          <div>
+            <NavLink href="/score">성적그래프</NavLink>
+          </div>
+          <div>
+            <NavLink href="#" onClick={this.toggle2}>
               양돈정보
             </NavLink>
-            <NavLink className="fl pa1">퀵메뉴</NavLink>
-          </NavItem>
-        </Nav>
+          </div>
+          <div>
+            <NavLink href="/quick">퀵메뉴</NavLink>
+          </div>
+        </div>
 
         {this.fadeIn0 && (
           <>
             <div className="scrolling-wrapper">
-              <div className="item">
-                <Link to="/iot/1">
-                  <Button outline color="primary" className="ma1 fl">
+              <div>
+                <Link to="/daily/1">
+                  <Button outline color="primary" className="ml2 fl">
                     사육현황
                   </Button>
                 </Link>
               </div>
-              <div className="item">
-                <Link to="/iot/2">
-                  <Button outline color="primary" className="ma1 fl">
+              <div>
+                <Link to="/daily/2">
+                  <Button outline color="primary" className="ml2 fl">
                     교육현황
                   </Button>
                 </Link>
               </div>
-              <div className="item">
-                <Button outline color="primary" className="ma1 fl">
-                  임신사고현황
-                </Button>
+              <div>
+                <Link to="/daily/3">
+                  <Button outline color="primary" className="ml2 fl">
+                    임신사고현황
+                  </Button>
+                </Link>
               </div>
-              <div className="item">
-                <Button outline color="primary" className="ma1 fl">
-                  생산현황
-                </Button>
+              <div>
+                <Link to="/daily/4">
+                  <Button outline color="primary" className="ml2 fl">
+                    생산현황
+                  </Button>
+                </Link>
               </div>
-              <div className="item">
-                <Button outline color="primary" className="ma1 fl">
-                  전입 및 전출/폐사현황
-                </Button>
+              <div>
+                <Link to="/daily/5">
+                  <Button outline color="primary" className="ml2 fl">
+                    전입 및 전출/폐사현황
+                  </Button>
+                </Link>
               </div>
-              <div className="item">
-                <Button outline color="primary" className="ma1 fl">
-                  거래기록
-                </Button>
+              <div>
+                <Link to="/daily/6">
+                  <Button outline color="primary" className="ml2 fl">
+                    거래기록
+                  </Button>
+                </Link>
               </div>
             </div>
           </>
@@ -104,49 +120,67 @@ class TopMenu extends Component {
           <>
             <div className="scrolling-wrapper">
               <div className="item">
-                <Button outline color="primary" className="ma1 fl">
-                  모돈자동급이기
-                </Button>
+                <Link to="/iot/1">
+                  <Button outline color="primary" className="ml2 fl">
+                    모돈자동급이기
+                  </Button>
+                </Link>
               </div>
               <div className="item">
-                <Button outline color="primary" className="ma1 fl">
-                  군사급이기
-                </Button>
+                <Link to="/iot/2">
+                  <Button outline color="primary" className="ml2 fl">
+                    군사급이기
+                  </Button>
+                </Link>
               </div>
               <div className="item">
-                <Button outline color="primary" className="ma1 fl">
-                  환경센서
-                </Button>
+                <Link to="/iot/3">
+                  <Button outline color="primary" className="ml2 fl">
+                    환경센서
+                  </Button>
+                </Link>
               </div>
               <div className="item">
-                <Button outline color="primary" className="ma1 fl">
-                  음수관리기
-                </Button>
+                <Link to="/iot/4">
+                  <Button outline color="primary" className="ml2 fl">
+                    음수관리기
+                  </Button>
+                </Link>
               </div>
               <div className="item">
-                <Button outline color="primary" className="ma1 fl">
-                  사료빈관리기
-                </Button>
+                <Link to="/iot/5">
+                  <Button outline color="primary" className="ml2 fl">
+                    사료빈관리기
+                  </Button>
+                </Link>
               </div>
               <div className="item">
-                <Button outline color="primary" className="ma1 fl">
-                  돈선별기
-                </Button>
+                <Link to="/iot/6">
+                  <Button outline color="primary" className="ml2 fl">
+                    돈선별기
+                  </Button>
+                </Link>
               </div>
               <div className="item">
-                <Button outline color="primary" className="ma1 fl">
-                  자돈급이기
-                </Button>
+                <Link to="/iot/7">
+                  <Button outline color="primary" className="ml2 fl">
+                    자돈급이기
+                  </Button>
+                </Link>
               </div>
               <div className="item">
-                <Button outline color="primary" className="ma1 fl">
-                  냉방기
-                </Button>
+                <Link to="/iot/8">
+                  <Button outline color="primary" className="ml2 fl">
+                    냉방기
+                  </Button>
+                </Link>
               </div>
               <div className="item">
-                <Button outline color="primary" className="ma1 fl">
-                  전기화재
-                </Button>
+                <Link to="/iot/9">
+                  <Button outline color="primary" className="ml2 fl">
+                    전기화재
+                  </Button>
+                </Link>
               </div>
             </div>
           </>
@@ -156,19 +190,25 @@ class TopMenu extends Component {
           <>
             <div className="scrolling-wrapper">
               <div className="item">
-                <Button outline color="primary" className="ma1 fl">
-                  도매시세
-                </Button>
+                <Link to="/pig/1">
+                  <Button outline color="primary" className="ml2 fl">
+                    도매시세
+                  </Button>
+                </Link>
               </div>
               <div className="item">
-                <Button outline color="primary" className="ma1 fl">
-                  양돈기사
-                </Button>
+                <Link to="/pig/2">
+                  <Button outline color="primary" className="ml2 fl">
+                    양돈기사
+                  </Button>
+                </Link>
               </div>
               <div className="item">
-                <Button outline color="primary" className="ma1 fl">
-                  날씨
-                </Button>
+                <Link to="/pig/3">
+                  <Button outline color="primary" className="ml2 fl">
+                    날씨
+                  </Button>
+                </Link>
               </div>
             </div>
           </>
