@@ -4,6 +4,13 @@ This project is mino's React-Boilerplate Codes
 
 Created with create-react-app (V2)
 
-Support TypeScript, MobX 
+Simple Example using MobX
 
-and Simple Counter Example using MobX
+Support List
+- bootstrap 4
+- react-router 4
+- styled-components
+- typescript 
+- node-sass
+- mobx (store)
+
