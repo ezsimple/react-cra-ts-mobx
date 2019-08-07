@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
@@ -41,10 +42,14 @@ class Logo extends Component {
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
+                <Link to="/components/" className="nav-link">
+                  Components
+                </Link>
               </NavItem>
               <NavItem>
-                <NavLink href="/">Pigplan XE</NavLink>
+                <Link href="/" className="nav-link">
+                  Pigplan XE
+                </Link>
               </NavItem>
             </Nav>
           </Collapse>
