@@ -3,114 +3,59 @@ import { Link } from 'react-router-dom';
 
 import { Nav, NavItem, NavLink, Button } from 'reactstrap';
 
-import { observable, action } from 'mobx';
-import { observer } from 'mobx-react';
+import { observer, inject } from 'mobx-react';
 
 import './index.scss';
 
+@inject('topMenuStore')
 @observer
 class TopMenu extends Component {
-  @observable
-  fadeIn0 = false;
-
-  @observable
-  fadeIn1 = false;
-
-  @observable
-  fadeIn2 = false;
-
-  @observable
-  fadeIn3 = false;
-
-  @observable
-  fadeIn4 = false;
-
-  clear = () => {
-    this.fadeIn0 = this.fadeIn1 = this.fadeIn2 = this.fadeIn3 = this.fadeIn4 = false;
-  };
-
-  @action
-  toggle0 = () => {
-    this.clear();
-    this.fadeIn0 = true;
-  };
-
-  @action
-  toggle1 = () => {
-    this.clear();
-    this.fadeIn1 = true;
-  };
-
-  @action
-  toggle2 = () => {
-    this.clear();
-    this.fadeIn2 = true;
-  };
-
-  @action
-  toggle3 = () => {
-    this.clear();
-    this.fadeIn3 = true;
-  };
-
-  @action
-  toggle4 = () => {
-    this.clear();
-    this.fadeIn4 = true;
-  };
-
-  // -----------------------------------------------------------------------------
-  // url 경로에 따라, 2Depth 메뉴 출력여부 확인
-  // -----------------------------------------------------------------------------
-  // react-router에서는 url이 바뀌지 않으므로, 이 방법은 쓸수 없다.
-  // subMenuExist = () => {
-  //   let loc = window.location.pathname;
-  //   if (!loc) return false;
-
-  //   let ret = !(loc.indexOf('/score') !== -1 || loc.indexOf('/quick') !== -1);
-  //   console.log(
-  //     'check : ',
-  //     loc,
-  //     loc.indexOf('/score'),
-  //     loc.indexOf('/quick'),
-  //     ret
-  //   );
-  //   return ret;
-  // };
-
   render() {
+    const { topMenuStore } = this.props;
+    let toggle0 = topMenuStore.toggle0;
+    let toggle1 = topMenuStore.toggle1;
+    let toggle2 = topMenuStore.toggle2;
+    let toggle3 = topMenuStore.toggle3;
+    let toggle4 = topMenuStore.toggle4;
+
+    let fadeIn0 = topMenuStore.fadeIn0;
+    let fadeIn1 = topMenuStore.fadeIn1;
+    let fadeIn2 = topMenuStore.fadeIn2;
+    let fadeIn3 = topMenuStore.fadeIn3;
+    let fadeIn4 = topMenuStore.fadeIn4;
+
     return (
       <div>
         <div className="scrolling-wrapper">
           <div>
-            <NavLink href="#" onClick={this.toggle0}>
+            <NavLink href="#" onClick={toggle0}>
               일보
             </NavLink>
           </div>
           <div>
-            <NavLink href="#" onClick={this.toggle1}>
+            <NavLink href="#" onClick={toggle1}>
               IoT
             </NavLink>
           </div>
           <div>
-            <NavLink href="#" onClick={this.toggle2}>
+            <NavLink href="#" onClick={toggle2}>
               성적그래프
             </NavLink>
           </div>
           <div>
-            <NavLink href="#" onClick={this.toggle3}>
+            <NavLink href="#" onClick={toggle3}>
               {' '}
               양돈정보
             </NavLink>
           </div>
           <div>
-            <NavLink href="#" onClick={this.toggle4}>
+            <NavLink href="#" onClick={toggle4}>
               퀵메뉴
             </NavLink>
           </div>
         </div>
 
-        {this.fadeIn0 && (
+        {fadeIn0 && (
           <>
             <div className="scrolling-wrapper">
               <div>
@@ -159,7 +104,7 @@ class TopMenu extends Component {
           </>
         )}
 
-        {this.fadeIn1 && (
+        {fadeIn1 && (
           <>
             <div className="scrolling-wrapper">
               <div className="item">
@@ -229,7 +174,7 @@ class TopMenu extends Component {
           </>
         )}
 
-        {this.fadeIn3 && (
+        {fadeIn3 && (
           <>
             <div className="scrolling-wrapper">
               <div className="item">
