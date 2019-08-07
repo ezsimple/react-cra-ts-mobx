@@ -47,7 +47,7 @@ class Logo extends Component {
                 </Link>
               </NavItem>
               <NavItem>
-                <Link href="/" className="nav-link">
+                <Link to="/" className="nav-link">
                   Pigplan XE
                 </Link>
               </NavItem>

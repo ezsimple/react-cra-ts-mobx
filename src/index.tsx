@@ -8,7 +8,7 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'tachyons/css/tachyons.min.css';
 
-import TopMenuStore from 'stores/TopMenuStore';
+import TopMenuStore from './stores/TopMenuStore';
 
 const topMenuStore = new TopMenuStore();
 
@@ -22,4 +22,4 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+serviceWorker.register();

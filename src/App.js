@@ -27,16 +27,13 @@ import NotFoundPage from 'containers/NotFoundPage';
 const AppWrapper = styled.div`
   /*
   어떤 디자인을 입혀야 하는지????
-
   max-width: calc(768px + 16px * 2);
-  margin: 0 auto;
+  */
+  margin: 0 0px;
+  padding: 0 0px;
   display: flex;
   min-height: 100%;
-  padding: 0 16px;
   flex-direction: column;
-  */
-  marging: 0;
-  pading: 0;
 `;
 
 class App extends Component {
